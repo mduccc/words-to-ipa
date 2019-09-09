@@ -28,7 +28,6 @@ module.exports = class Crawl {
             // This will be called for each crawled page
             callback: async function (error, res, done) {
                 console.log('-------------Started crawl----------------')
-                fs.writeFileSync('point.txt', newWordCount + '\n')
                 console.log(newWordCount, ' => ', newWordArray[newWordCount])
                 let date = new Date()
                 let objResult = null
@@ -72,6 +71,7 @@ module.exports = class Crawl {
                     console.log(objResult)
 
                     fs.writeFileSync('./files/' + md5(newWordArray[newWordCount]), JSON.stringify(objResult))
+                    fs.writeFileSync('point.txt', newWordCount + '\n')
                     console.log('-------------Finished crawl----------------')
                     callback(objResult)
                     done()
