@@ -17,7 +17,7 @@ module.exports = class Crawl {
         return result;
     }
 
-    async work(url, callback) {
+    async work(url, callback, time_sleep) {
         let fs = require('fs')
         let md5 = require('md5')
 
@@ -76,7 +76,7 @@ module.exports = class Crawl {
                     callback(objResult)
                     done()
                     let sleep = require('sleep')
-                    sleep.sleep(1)
+                    sleep.sleep(time_sleep)
                     newWordCount++
                     c.queue(url + newWordArray[newWordCount] + '?q=' + newWordArray[newWordCount])
                 }
