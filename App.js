@@ -12,7 +12,7 @@ app.listen(port, () => {
 
 let datas = []
 Crawl.wordArray = fs.readFileSync('./words.txt', 'utf8').split('\n')
-Crawl.wordCount = fs.readFileSync('point.txt', 'utf8').split('\n')[0]
+Crawl.wordCount = parseInt(fs.readFileSync('point.txt', 'utf8').split('\n')[0]) + 1
 console.log(Crawl.wordCount)
 Crawl.work(url, data => {
     if (data != null) 
