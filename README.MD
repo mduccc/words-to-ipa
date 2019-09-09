@@ -1,4 +1,4 @@
-## This tool will convert English words to IPA
+## This tool convert English words to IPA
 
 `words.txt` file contains over 466k English words.
 
